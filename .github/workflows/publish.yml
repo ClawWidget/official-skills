@@ -1,0 +1,37 @@
+name: Publish Catalog
+on:
+  push:
+    branches: [main]
+    paths: ['skills/**']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cwidget
+        run: |
+          curl -sSL https://releases.clawwidget.com/cwidget-latest-linux-x64.tar.gz | tar -xz
+          sudo install -m 755 cwidget /usr/local/bin/
+
+      - name: Build catalog.json + manifest + hashed skills
+        run: |
+          cwidget dev build-catalog \
+            --source skills/ \
+            --out dist/ \
+            --registry official \
+            --registry-url https://agents.clawwidget.com \
+            --commit ${{ github.sha }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: official-skills
+          directory: dist/

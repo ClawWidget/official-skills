@@ -1,0 +1,22 @@
+name: Validate Catalog
+on:
+  pull_request:
+    paths: ['skills/**', '.github/workflows/validate.yml']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cwidget
+        run: |
+          # Grabbing the latest release. (We will pin this to a specific version later once --catalog-mode is shipped in the binary).
+          curl -sSL https://releases.clawwidget.com/cwidget-latest-linux-x64.tar.gz | tar -xz
+          sudo install -m 755 cwidget /usr/local/bin/
+
+      - name: Validate every skill against catalog rules
+        run: cwidget validate --catalog-mode skills/
+
+      - name: Verify catalog graph is flat + closed
+        run: cwidget validate --catalog-graph skills/
