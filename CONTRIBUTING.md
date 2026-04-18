@@ -9,7 +9,7 @@ skill written for the ClawWidget runtime.
 ## Before you open a PR
 
 - Read the [skill format spec](#skill-file-format) below.
-- Run `cwidget validate --catalog-mode skills/` locally against your file.
+- Run a strict `build-catalog` then `cwidget validate --catalog-mode dist/` locally (see [Local preview](#local-preview)).
 - Every rule violation printed is a `RULE_*` ID. Look it up — it will tell you
   exactly what to fix.
 
@@ -17,7 +17,7 @@ skill written for the ClawWidget runtime.
 
 ## Skill file format
 
-Skills live at `skills/official/<category>/<slug>.md`.
+Skills live at `skills/official/<category>/<name>.md`.
 
 ```
 skills/
@@ -41,7 +41,7 @@ fields:
 | `remote_expose` | bool | `false` for MVP; no remote-expose PRs accepted yet |
 | `human_in_loop` | bool | |
 | `sidecars_required` | list | Declared sidecar binaries |
-| `requires` | list | Slugs this skill depends on. Must be `official/*` only. Max depth: 1. |
+| `requires` | list | JIT dependency URIs: `official/<category>/<name>` only (v1). Max depth: 1. |
 
 ---
 
@@ -55,7 +55,7 @@ is. Think of it as the tool description you'd write for an LLM tool-use API.
 
 - [ ] Describes *when* to use this skill (not just *what* it does)
 - [ ] Names the return shape: `Returns { field: type, … }`
-- [ ] Notes composition partners if any: `Compose with official/X to …`
+- [ ] Notes composition partners if any: `Compose with official/<category>/<name> to …`
 - [ ] Notes hard limits: single-item only, local-only, etc.
 - [ ] 100–800 characters. Under 100 is too thin; over 800 will be truncated by
       the validator with a warning.
@@ -66,7 +66,7 @@ is. Think of it as the tool description you'd write for an LLM tool-use API.
 llm_hint: >
   Use when the user pastes a YouTube URL and wants the audio saved locally.
   Returns { saved_path: string, duration_ms: integer }.
-  Compose with official/transcribe-audio to get a transcript chain.
+  Compose with official/media/transcribe-audio to get a transcript chain.
   Single video only in v1 — do not use for playlists.
 ```
 
@@ -74,7 +74,7 @@ llm_hint: >
 
 ## Dependency rules
 
-- `requires:` may only reference `official/*` slugs.
+- `requires:` may only reference categoryful `official/<category>/<name>` slugs.
   → Violations fail with `RULE_CATALOG_PUBLISH_REQUIRES_TRUSTED_ONLY`.
 - `requires:` depth is capped at 1. A skill you depend on must have an empty
   `requires:` list.
@@ -104,8 +104,7 @@ Complete every item. PRs with unchecked boxes will not be reviewed.
 
 ## Review & merge
 
-1. CI runs `cwidget validate --catalog-mode` and `--catalog-graph`. Both must
-   be green.
+1. CI passes per `.github/workflows/validate.yml`.
 2. A CODEOWNER approves. See `CODEOWNERS` for who that is.
 3. On merge to `main`, the catalog auto-deploys to
    `agents.clawwidget.com/catalog.json` within ~2 minutes.
@@ -118,13 +117,10 @@ publish pipeline does that.
 ## Local preview
 
 ```bash
-# Validate your skill before pushing
-cwidget validate --catalog-mode skills/
-cwidget validate --catalog-graph skills/
-
-# Build the full catalog locally (requires cwidget dev build)
-cwidget dev build-catalog --source skills/ --out dist/ --registry official \
-  --registry-url https://agents.clawwidget.com --commit local
+# Build the full catalog locally (requires cwidget dev build), then validate CP rules on dist/
+cwidget dev build-catalog --source skills/official --out dist/ --registry official \
+  --registry-url https://agents.clawwidget.com --commit local --strict
+cwidget validate --catalog-mode dist/
 ```
 
 After `build-catalog`, copy Cloudflare headers into `dist/` (same as CI):

@@ -6,7 +6,7 @@ enabled: true
 display-name: YouTube Audio Downloader
 task: Downloads audio from a YouTube URL copied to the clipboard into ~/Downloads/.
 icon: download
-llm-hint: "Fires when a YouTube URL is copied. Downloads audio to ~/Downloads/ via yt-dlp. Returns {saved_path} — the download directory (~/Downloads/); the exact filename is not surfaced without registry flags not in the contract. Compose with official/transcribe-audio by dropping the saved file onto the ClawWidget drop zone to produce a transcript. Single-video only — not for playlists. Requires yt-dlp sidecar."
+llm-hint: "Fires when a YouTube URL is copied. Downloads audio to ~/Downloads/ via yt-dlp. Returns {saved_path} — the download directory (~/Downloads/); the exact filename is not surfaced without registry flags not in the contract. Compose with official/media/transcribe-audio by dropping the saved file onto the ClawWidget drop zone to produce a transcript. Single-video only — not for playlists. Requires yt-dlp sidecar."
 trigger:
   type: on-clipboard
   match: url
@@ -32,7 +32,7 @@ outputs:
 
 Watches the clipboard for YouTube URLs. On match, downloads the audio track to `~/Downloads/` using `yt-dlp` and returns the download directory path.
 
-To build a download-then-transcribe workflow: install both `official/youtube-dl` and `official/transcribe-audio`, then drop the saved mp3 onto the ClawWidget drop zone.
+To build a download-then-transcribe workflow: install both `official/media/youtube-dl` and `official/media/transcribe-audio`, then drop the saved mp3 onto the ClawWidget drop zone.
 
 ```cwidget
 1. $URL = cwidget clip read

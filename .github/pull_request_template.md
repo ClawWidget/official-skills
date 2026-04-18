@@ -1,11 +1,11 @@
 ## Skill PR checklist
 
-**Slug:** `official/<category>/<slug>`
+**Slug:** `official/<category>/<name>` (three segments after `official/`)
 
 ### Format
 - [ ] File is at `skills/official/<category>/<slug>.md`
 - [ ] All required frontmatter fields are present and valid
-- [ ] `cwidget validate --catalog-mode skills/` passes locally with no errors
+- [ ] Strict `cwidget dev build-catalog` + `cwidget validate --catalog-mode dist/` pass locally with no errors
 
 ### `llm_hint` quality
 - [ ] Describes *when* to invoke this skill (not just what it does)
@@ -15,11 +15,11 @@
 - [ ] Between 100–800 characters
 
 ### Dependencies
-- [ ] `requires:` contains only `official/*` slugs (or is empty)
+- [ ] `requires:` contains only categoryful `official/<category>/<name>` slugs (or is empty)
 - [ ] Every slug in `requires:` exists as a file in this repo
 - [ ] None of the skills in `requires:` themselves have non-empty `requires:`
       (flat dep graph only)
-- [ ] `cwidget validate --catalog-graph skills/` passes locally
+- [ ] Catalog graph checks pass in CI (flat + closed `requires:`)
 
 ### Policy
 - [ ] `remote_expose: false` (remote-expose PRs are not accepted yet)

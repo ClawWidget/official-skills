@@ -6,7 +6,7 @@ enabled: true
 display-name: Notify
 task: Fires a "Done." desktop notification. Composable completion primitive for skill chains.
 icon: bell
-llm-hint: "Composable completion primitive. Invoke via `cwidget skill call notify` (no input required). Returns {sent: true}. No permissions, no sidecars, no network. Use as the terminal step of any chain to signal completion to the user. Pairs with official/clipboard-summary as its JIT-resolved dependency."
+llm-hint: "Composable completion primitive. Invoke via `cwidget skill call official/system/notify` (no input required). Returns {sent: true}. No permissions, no sidecars, no network. Use as the terminal step of any chain to signal completion to the user. Pairs with official/system/clipboard-summary as its JIT-resolved dependency."
 trigger:
   type: manual
 composable: true
@@ -20,7 +20,7 @@ outputs:
 
 Fires a brief "Done." notification. A composable completion primitive — call it as the final step of any skill chain to signal the user that work is complete.
 
-Run standalone to smoke-test composable skill infrastructure: `cwidget run notify`.
+Run standalone to smoke-test composable skill infrastructure: `cwidget run official/system/notify`.
 
 ```cwidget
 1. cwidget ui notify "Done."
