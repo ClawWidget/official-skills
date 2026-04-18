@@ -6,17 +6,27 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      # Pin — not cwidget-latest — per OFFICIAL_SKILLS_REPO_ALIGNMENT §6 / Slice §1.11 (bump only when the release notes require it).
+      CWIDGET_VERSION: "0.5.0"
     steps:
       - uses: actions/checkout@v4
 
       - name: Install cwidget
         run: |
-          # Grabbing the latest release. (We will pin this to a specific version later once --catalog-mode is shipped in the binary).
-          curl -sSL https://releases.clawwidget.com/cwidget-latest-linux-x64.tar.gz | tar -xz
+          curl -sSL "https://releases.clawwidget.com/cwidget-${CWIDGET_VERSION}-linux-x64.tar.gz" | tar -xz
           sudo install -m 755 cwidget /usr/local/bin/
 
-      - name: Validate every skill against catalog rules
-        run: cwidget validate --catalog-mode skills/
+      - name: Build catalog (strict — official)
+        run: |
+          cwidget dev build-catalog \
+            --source skills/official \
+            --out dist/ \
+            --registry official \
+            --registry-url https://agents.clawwidget.com \
+            --commit "${{ github.sha }}" \
+            --strict
 
-      - name: Verify catalog graph is flat + closed
-        run: cwidget validate --catalog-graph skills/
+      # CP001–CP005 (incl. flat + closed requires, raw_url vs slug+hash) via catalog_publish; no separate --catalog-graph on skills/ — dist/ is the validated artifact (handbook §9).
+      - name: Catalog publish-time rules (CP001–CP005)
+        run: cwidget validate --catalog-mode dist/
