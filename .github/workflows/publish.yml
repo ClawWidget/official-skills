@@ -2,9 +2,9 @@ name: Publish Catalog
 on:
   push:
     branches: [main]
-    paths:
-      - 'skills/**'
-      - '.github/workflows/publish.yml'
+    paths: ['skills/**']
+  repository_dispatch:
+    types: [cwidget-engine-updated]
 
 jobs:
   publish:
