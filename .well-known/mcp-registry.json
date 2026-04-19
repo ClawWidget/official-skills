@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "registry_name": "ClawWidget Official",
+  "registry_url": "https://agents.clawwidget.com",
+  "catalog_url": "https://agents.clawwidget.com/catalog.json",
+  "skill_count": 15,
+  "description": "Curated, PR-reviewed atomic skills for ClawWidget. Each skill is an inspectable Markdown file, sandboxed at execution, composable via `cwidget skill call`.",
+  "publisher": {
+    "name": "ClawWidget",
+    "url": "https://clawwidget.com",
+    "support_url": "https://github.com/ClawWidget/official-skills/issues"
+  },
+  "trust_model": "curated",
+  "submission_policy": "github-pr",
+  "license": "MIT"
+}

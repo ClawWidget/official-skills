@@ -1,6 +1,0 @@
-# All skills require founder approval.
-# Add trusted reviewers here as the registry grows.
-skills/   @ClawWidget/founders
-
-# Workflow changes require the same approval.
-.github/  @ClawWidget/founders

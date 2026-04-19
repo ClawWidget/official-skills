@@ -1,0 +1,442 @@
+{
+  "schema_version": "1.0",
+  "registry": "official",
+  "registry_url": "https://agents.clawwidget.com",
+  "generated_at": "2026-04-19T14:12:33.683540350Z",
+  "generator": {
+    "name": "cwidget-catalog-builder",
+    "version": "1.2.1",
+    "commit": "787c522c5c9e6a2c8ba3eb6c19a0228e76c01563"
+  },
+  "skill_count": 15,
+  "skills": [
+    {
+      "slug": "official/data/csv-rolling-average",
+      "name": "csv-rolling-average",
+      "description": "Drop a CSV file and compute a 7-row rolling average of a revenue column locally with DuckDB.",
+      "llm_hint": "Fires on file drop. Uses DuckDB to compute a 7-row rolling average for a `revenue` column from a dropped CSV via read_csv_auto('$DROPPED_FILE'). Returns {result_json} with revenue and rolling_avg_7 rows in input order. Local-only, no network.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "duckdb"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/sha256-7e8b94da080a6f58a4d691523847db65720222a75b214eaa87864c639ed5d6a3/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/skill.md",
+      "hash": "sha256:7e8b94da080a6f58a4d691523847db65720222a75b214eaa87864c639ed5d6a3",
+      "size_bytes": 1464,
+      "added_at": "2026-04-19T14:10:25.103029761Z",
+      "last_modified_at": "2026-04-19T14:10:25.103029761Z",
+      "category": "data",
+      "tags": [
+        "csv-analytics",
+        "duckdb",
+        "rolling-average",
+        "on-drop",
+        "window-function",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/data/csv-sum-column",
+      "name": "csv-sum-column",
+      "description": "Drop a CSV file and compute SUM(revenue) locally with DuckDB.",
+      "llm_hint": "Fires on file drop. Uses DuckDB to compute SUM(revenue) from a dropped CSV via read_csv_auto('$DROPPED_FILE'). Returns {result_json}. Local-only, no network. Use for quick revenue totals before optional LLM interpretation or notifications.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "duckdb"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/sha256-52c47c47c2b253e0560a0ff5e74ea4e4bf539556c0e2a46171b0dff783ec2909/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/skill.md",
+      "hash": "sha256:52c47c47c2b253e0560a0ff5e74ea4e4bf539556c0e2a46171b0dff783ec2909",
+      "size_bytes": 1214,
+      "added_at": "2026-04-19T14:10:25.103830495Z",
+      "last_modified_at": "2026-04-19T14:10:25.103830495Z",
+      "category": "data",
+      "tags": [
+        "csv-analytics",
+        "duckdb",
+        "sum-aggregation",
+        "on-drop",
+        "revenue",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/documents/markdown-to-pdf",
+      "name": "markdown-to-pdf",
+      "description": "Drop a Markdown file to convert it into a PDF using Pandoc (local-only).",
+      "llm_hint": "Fires on file drop. Converts a local Markdown file (.md) to PDF using Pandoc and writes <input>.pdf beside the source file. Returns {saved_path}. Local-only, no network. Useful as the document-render step after an LLM rewrite skill that outputs Markdown.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "pandoc"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/sha256-e6cf35b03df3fa9a6e0b0790fcdb554bf5706ce2db2ceceae1d0dbc654d3a2af/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/skill.md",
+      "hash": "sha256:e6cf35b03df3fa9a6e0b0790fcdb554bf5706ce2db2ceceae1d0dbc654d3a2af",
+      "size_bytes": 1342,
+      "added_at": "2026-04-19T14:10:25.103830495Z",
+      "last_modified_at": "2026-04-19T14:10:25.103830495Z",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "pdf-generation",
+        "pandoc",
+        "on-drop",
+        "document-render",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/documents/pdf-to-text",
+      "name": "pdf-to-text",
+      "description": "Drop a PDF file to extract its plain text via Pandoc. Local-only, no network.",
+      "llm_hint": "Fires on file drop. Extracts plain text from a PDF using Pandoc (--to plain). Returns {text}. Local-only — no LLM, no network. Requires pandoc sidecar. Chain text output into an LLM step for analysis or summarization.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "pandoc"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/sha256-82f0ad78c0c69e0ef9d75ee7892ecc728a6b0fea7c6665055ea9cb99ae033fed/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/skill.md",
+      "hash": "sha256:82f0ad78c0c69e0ef9d75ee7892ecc728a6b0fea7c6665055ea9cb99ae033fed",
+      "size_bytes": 1294,
+      "added_at": "2026-04-19T14:10:25.104094118Z",
+      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "category": "documents",
+      "tags": [
+        "pdf-extraction",
+        "document-text",
+        "pandoc",
+        "on-drop",
+        "text-output",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/graphics/ocr-to-text",
+      "name": "ocr-to-text",
+      "description": "Drop an image file to extract text locally with Tesseract and save a .txt output.",
+      "llm_hint": "Fires on file drop. Runs Tesseract OCR on a local image (png/jpg/jpeg/tiff/bmp/gif/webp) and saves the extracted text as a .txt file in ~/Documents/ocr/. Returns {saved_path}. Local-only, no network.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "tesseract"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/sha256-47c9e953405d6cd3092446032c521ab352c02a1cbcbefe9348234c4538b00c54/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/skill.md",
+      "hash": "sha256:47c9e953405d6cd3092446032c521ab352c02a1cbcbefe9348234c4538b00c54",
+      "size_bytes": 1349,
+      "added_at": "2026-04-19T14:10:25.104094118Z",
+      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "category": "graphics",
+      "tags": [
+        "ocr",
+        "image-to-text",
+        "tesseract",
+        "on-drop",
+        "text-extraction",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/media/compress-video-720p",
+      "name": "compress-video-720p",
+      "description": "Drop a video file to generate a smaller MP4 share copy using ffmpeg.",
+      "llm_hint": "Fires on file drop. Creates a share-friendly MP4 copy from a local video file using ffmpeg and writes <input>-720p.mp4 beside the source file. Returns {saved_path}. Local-only, no network. Use when compatibility and easier sharing matter more than preserving original encoding.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "ffmpeg"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/sha256-837be9ddbd967338d61af626ccb7298b7938d8629cc733577a2048d869ec9839/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/skill.md",
+      "hash": "sha256:837be9ddbd967338d61af626ccb7298b7938d8629cc733577a2048d869ec9839",
+      "size_bytes": 1380,
+      "added_at": "2026-04-19T14:10:25.104094118Z",
+      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "category": "media",
+      "tags": [
+        "video-compression",
+        "ffmpeg",
+        "mp4-output",
+        "on-drop",
+        "share-copy",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/media/extract-audio",
+      "name": "extract-audio",
+      "description": "Drop a video file to convert it into an .m4a audio file using ffmpeg.",
+      "llm_hint": "Fires on file drop. Converts a local video file (mp4/mov/mkv/webm) to an .m4a file using ffmpeg and writes <input>.m4a beside the source file. Returns {saved_path}. Local-only, no network. Commonly used before official/media/transcribe-audio.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "ffmpeg"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/sha256-60af98cd6c502c6a3f04bd777a537781343b7e939c949c18a2445add403f0405/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/skill.md",
+      "hash": "sha256:60af98cd6c502c6a3f04bd777a537781343b7e939c949c18a2445add403f0405",
+      "size_bytes": 1294,
+      "added_at": "2026-04-19T14:10:25.104406131Z",
+      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "category": "media",
+      "tags": [
+        "audio-extraction",
+        "ffmpeg",
+        "video-to-audio",
+        "on-drop",
+        "m4a-output",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/media/transcribe-audio",
+      "name": "transcribe-audio",
+      "description": "Drop an audio file to transcribe it locally via Whisper. Returns a plain-text transcript.",
+      "llm_hint": "Fires on file drop. Transcribes a local audio file (mp3/m4a/wav/flac) using Whisper — fully local, no network. Returns {transcript}. Whisper runs the audio and returns text to stdout. Pairs with official/media/youtube-dl: download audio, then drop the saved file to transcribe. Requires whisper sidecar installed.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "whisper"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/sha256-a347b0addbfd55af2cb41dd642c73c6e89001539f4f658649b9446fc7e5a8aea/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/skill.md",
+      "hash": "sha256:a347b0addbfd55af2cb41dd642c73c6e89001539f4f658649b9446fc7e5a8aea",
+      "size_bytes": 1541,
+      "added_at": "2026-04-19T14:10:25.104406131Z",
+      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "category": "media",
+      "tags": [
+        "audio-transcription",
+        "whisper",
+        "speech-to-text",
+        "on-drop",
+        "local-processing",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/media/video-to-gif",
+      "name": "video-to-gif",
+      "description": "Drop a video file to convert it into a GIF for easy sharing.",
+      "llm_hint": "Fires on file drop. Converts a local video file (mp4/mov/mkv/webm) to a GIF using ffmpeg and writes <input>.gif beside the source file. Returns {saved_path}. Local-only, no network. Use for simple clip sharing when animation format is preferred.",
+      "trigger": "on-drop",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "ffmpeg"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/sha256-09047b056a26b38cd3f1da095843a46d67cce6b26674c30ed1b5c5a9de675747/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/skill.md",
+      "hash": "sha256:09047b056a26b38cd3f1da095843a46d67cce6b26674c30ed1b5c5a9de675747",
+      "size_bytes": 1254,
+      "added_at": "2026-04-19T14:10:25.104406131Z",
+      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "category": "media",
+      "tags": [
+        "gif-conversion",
+        "ffmpeg",
+        "video-processing",
+        "on-drop",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/media/youtube-dl",
+      "name": "youtube-dl",
+      "description": "Downloads audio from a YouTube URL copied to the clipboard into ~/Downloads/.",
+      "llm_hint": "Fires when a YouTube URL is copied. Downloads audio to ~/Downloads/ via yt-dlp. Returns {saved_path} — the download directory (~/Downloads/); the exact filename is not surfaced without registry flags not in the contract. Compose with official/media/transcribe-audio by dropping the saved file onto the ClawWidget drop zone to produce a transcript. Single-video only — not for playlists. Requires yt-dlp sidecar.",
+      "trigger": "on-clipboard",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [
+        "yt-dlp"
+      ],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/sha256-1e06ec7ab04d4a81bab1aecfaf22e9830b0b3e30973d98a76c5c982d51cd3dd8/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/skill.md",
+      "hash": "sha256:1e06ec7ab04d4a81bab1aecfaf22e9830b0b3e30973d98a76c5c982d51cd3dd8",
+      "size_bytes": 2008,
+      "added_at": "2026-04-19T14:10:25.104406131Z",
+      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "category": "media",
+      "tags": [
+        "youtube",
+        "audio-download",
+        "clipboard-url",
+        "media-ingest",
+        "ytdlp",
+        "yt-dlp",
+        "composable"
+      ]
+    },
+    {
+      "slug": "official/productivity/clipboard-action-items",
+      "name": "clipboard-action-items",
+      "description": "Extracts actionable next steps from copied text, then notifies via official/utilities/notify.",
+      "llm_hint": "Fires when text is copied. Uses an LLM to extract concrete action items / next steps from clipboard text as a plain-text '-' bullet list, shows them in a notification, then calls official/utilities/notify (JIT via requires). Returns {action_items}. Requires LLM API key; network is llm-only. Covers meeting notes and email-style captures (sp_b1_action_item_extractor).",
+      "trigger": "on-clipboard",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [
+        "official/utilities/notify"
+      ],
+      "raw_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/sha256-0589e2d5144a50e03dec0183380852dce108bd1a2fd1a785d8e8f0c2d2853186/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/skill.md",
+      "hash": "sha256:0589e2d5144a50e03dec0183380852dce108bd1a2fd1a785d8e8f0c2d2853186",
+      "size_bytes": 1852,
+      "added_at": "2026-04-19T14:10:25.104406131Z",
+      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "category": "productivity",
+      "tags": [
+        "clipboard-text",
+        "action-items",
+        "task-extraction",
+        "on-clipboard",
+        "llm"
+      ]
+    },
+    {
+      "slug": "official/productivity/clipboard-proofread",
+      "name": "clipboard-proofread",
+      "description": "Proofreads copied text for grammar and clarity, then notifies via official/utilities/notify.",
+      "llm_hint": "Fires when text is copied. Proofreads clipboard text for grammar, spelling, and punctuation via LLM (meaning preserved), shows the result in a notification, then calls official/utilities/notify (JIT via requires). Returns {corrected_text}. Requires LLM API key; network is llm-only. Same chain shape as official/productivity/clipboard-summary.",
+      "trigger": "on-clipboard",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [
+        "official/utilities/notify"
+      ],
+      "raw_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/sha256-841eb0b5049df8558f0516f39754736116c7445526ab8573b333ab14f24ab7ed/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/skill.md",
+      "hash": "sha256:841eb0b5049df8558f0516f39754736116c7445526ab8573b333ab14f24ab7ed",
+      "size_bytes": 1653,
+      "added_at": "2026-04-19T14:10:25.104885075Z",
+      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "category": "productivity",
+      "tags": [
+        "clipboard-text",
+        "grammar-fix",
+        "proofread",
+        "on-clipboard",
+        "llm"
+      ]
+    },
+    {
+      "slug": "official/productivity/clipboard-summary",
+      "name": "clipboard-summary",
+      "description": "Summarizes clipboard text into 2-3 bullet points and notifies via official/utilities/notify.",
+      "llm_hint": "Fires when text is copied. Summarizes clipboard content to 2-3 bullets via LLM, then fires official/utilities/notify (auto-installed via requires). Returns {summary}. Requires LLM API key in Keychain. First real requires-chain in the catalog — install this skill and official/utilities/notify is fetched automatically from the registry.",
+      "trigger": "on-clipboard",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [
+        "official/utilities/notify"
+      ],
+      "raw_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/sha256-9efa1c6e9e112c16155779083d933ffbab2f1a82916751dc9749bb86304836f9/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/skill.md",
+      "hash": "sha256:9efa1c6e9e112c16155779083d933ffbab2f1a82916751dc9749bb86304836f9",
+      "size_bytes": 1627,
+      "added_at": "2026-04-19T14:10:25.104885075Z",
+      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "category": "productivity",
+      "tags": [
+        "clipboard-text",
+        "llm-summary",
+        "bullet-summary",
+        "on-clipboard",
+        "requires-chain"
+      ]
+    },
+    {
+      "slug": "official/productivity/clipboard-translate-to-english",
+      "name": "clipboard-translate-to-english",
+      "description": "Translates copied text into clear English, then notifies via official/utilities/notify.",
+      "llm_hint": "Fires when text is copied. Translates clipboard text to clear, natural English via LLM (if already English, light polish only), shows the result in a notification, then calls official/utilities/notify (JIT via requires). Returns {english_text}. Requires LLM API key; network is llm-only. Same chain shape as official/productivity/clipboard-summary and clipboard-proofread.",
+      "trigger": "on-clipboard",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [
+        "official/utilities/notify"
+      ],
+      "raw_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/sha256-bf8d025d517fc9633073667bf770841d0625a4acfdbc760435c4426d494cd27d/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/skill.md",
+      "hash": "sha256:bf8d025d517fc9633073667bf770841d0625a4acfdbc760435c4426d494cd27d",
+      "size_bytes": 1764,
+      "added_at": "2026-04-19T14:10:25.104885075Z",
+      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "category": "productivity",
+      "tags": [
+        "clipboard-text",
+        "translation",
+        "english",
+        "on-clipboard",
+        "llm"
+      ]
+    },
+    {
+      "slug": "official/utilities/notify",
+      "name": "notify",
+      "description": "Fires a \"Done.\" desktop notification. Composable completion primitive for skill chains.",
+      "llm_hint": "Composable completion primitive. Invoke via `cwidget skill call official/utilities/notify` (no input required). Returns {sent: true}. No permissions, no sidecars, no network. Use as the terminal step of any chain to signal completion to the user. Pairs with official/productivity/clipboard-summary as its JIT-resolved dependency.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/utilities/notify/sha256-616bdb60adb4bd3958067a1d81f5545fd4327b3970e786fdeee505c49af3bda0/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/utilities/notify/skill.md",
+      "hash": "sha256:616bdb60adb4bd3958067a1d81f5545fd4327b3970e786fdeee505c49af3bda0",
+      "size_bytes": 1262,
+      "added_at": "2026-04-19T14:10:25.104885075Z",
+      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "category": "utilities",
+      "tags": [
+        "notification",
+        "completion-signal",
+        "manual-trigger",
+        "composable",
+        "utility"
+      ]
+    }
+  ]
+}
