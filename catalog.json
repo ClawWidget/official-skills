@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "registry": "official",
   "registry_url": "https://agents.clawwidget.com",
-  "generated_at": "2026-04-19T14:12:33.683540350Z",
+  "generated_at": "2026-04-20T04:13:10.022365555Z",
   "generator": {
     "name": "cwidget-catalog-builder",
     "version": "1.2.1",
-    "commit": "787c522c5c9e6a2c8ba3eb6c19a0228e76c01563"
+    "commit": "82bf5a646cdfc984ece4ef8baadc654750f3e311"
   },
   "skill_count": 15,
   "skills": [
@@ -27,8 +27,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/skill.md",
       "hash": "sha256:7e8b94da080a6f58a4d691523847db65720222a75b214eaa87864c639ed5d6a3",
       "size_bytes": 1464,
-      "added_at": "2026-04-19T14:10:25.103029761Z",
-      "last_modified_at": "2026-04-19T14:10:25.103029761Z",
+      "added_at": "2026-04-20T04:11:03.930160843Z",
+      "last_modified_at": "2026-04-20T04:11:03.930160843Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -37,7 +37,20 @@
         "on-drop",
         "window-function",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/data/csv-rolling-average",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "result_json"
+        ],
+        "output_contract": [
+          {
+            "name": "result_json",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/data/csv-sum-column",
@@ -56,8 +69,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/skill.md",
       "hash": "sha256:52c47c47c2b253e0560a0ff5e74ea4e4bf539556c0e2a46171b0dff783ec2909",
       "size_bytes": 1214,
-      "added_at": "2026-04-19T14:10:25.103830495Z",
-      "last_modified_at": "2026-04-19T14:10:25.103830495Z",
+      "added_at": "2026-04-20T04:11:03.930247465Z",
+      "last_modified_at": "2026-04-20T04:11:03.930247465Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -66,7 +79,20 @@
         "on-drop",
         "revenue",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/data/csv-sum-column",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "result_json"
+        ],
+        "output_contract": [
+          {
+            "name": "result_json",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/documents/markdown-to-pdf",
@@ -85,8 +111,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/skill.md",
       "hash": "sha256:e6cf35b03df3fa9a6e0b0790fcdb554bf5706ce2db2ceceae1d0dbc654d3a2af",
       "size_bytes": 1342,
-      "added_at": "2026-04-19T14:10:25.103830495Z",
-      "last_modified_at": "2026-04-19T14:10:25.103830495Z",
+      "added_at": "2026-04-20T04:11:03.930247465Z",
+      "last_modified_at": "2026-04-20T04:11:03.930247465Z",
       "category": "documents",
       "tags": [
         "markdown",
@@ -95,7 +121,21 @@
         "on-drop",
         "document-render",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/documents/markdown-to-pdf",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_path",
+            "type": "string",
+            "path_kind": "any"
+          }
+        ]
+      }
     },
     {
       "slug": "official/documents/pdf-to-text",
@@ -114,8 +154,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/skill.md",
       "hash": "sha256:82f0ad78c0c69e0ef9d75ee7892ecc728a6b0fea7c6665055ea9cb99ae033fed",
       "size_bytes": 1294,
-      "added_at": "2026-04-19T14:10:25.104094118Z",
-      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "added_at": "2026-04-20T04:11:03.930397596Z",
+      "last_modified_at": "2026-04-20T04:11:03.930397596Z",
       "category": "documents",
       "tags": [
         "pdf-extraction",
@@ -124,7 +164,20 @@
         "on-drop",
         "text-output",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/documents/pdf-to-text",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "text"
+        ],
+        "output_contract": [
+          {
+            "name": "text",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/graphics/ocr-to-text",
@@ -143,8 +196,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/skill.md",
       "hash": "sha256:47c9e953405d6cd3092446032c521ab352c02a1cbcbefe9348234c4538b00c54",
       "size_bytes": 1349,
-      "added_at": "2026-04-19T14:10:25.104094118Z",
-      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "added_at": "2026-04-20T04:11:03.930397596Z",
+      "last_modified_at": "2026-04-20T04:11:03.930397596Z",
       "category": "graphics",
       "tags": [
         "ocr",
@@ -153,7 +206,21 @@
         "on-drop",
         "text-extraction",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/graphics/ocr-to-text",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_path",
+            "type": "string",
+            "path_kind": "any"
+          }
+        ]
+      }
     },
     {
       "slug": "official/media/compress-video-720p",
@@ -172,8 +239,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/skill.md",
       "hash": "sha256:837be9ddbd967338d61af626ccb7298b7938d8629cc733577a2048d869ec9839",
       "size_bytes": 1380,
-      "added_at": "2026-04-19T14:10:25.104094118Z",
-      "last_modified_at": "2026-04-19T14:10:25.104094118Z",
+      "added_at": "2026-04-20T04:11:03.930397596Z",
+      "last_modified_at": "2026-04-20T04:11:03.930397596Z",
       "category": "media",
       "tags": [
         "video-compression",
@@ -182,7 +249,21 @@
         "on-drop",
         "share-copy",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/media/compress-video-720p",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_path",
+            "type": "string",
+            "path_kind": "any"
+          }
+        ]
+      }
     },
     {
       "slug": "official/media/extract-audio",
@@ -201,8 +282,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/skill.md",
       "hash": "sha256:60af98cd6c502c6a3f04bd777a537781343b7e939c949c18a2445add403f0405",
       "size_bytes": 1294,
-      "added_at": "2026-04-19T14:10:25.104406131Z",
-      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "added_at": "2026-04-20T04:11:03.930591189Z",
+      "last_modified_at": "2026-04-20T04:11:03.930591189Z",
       "category": "media",
       "tags": [
         "audio-extraction",
@@ -211,13 +292,27 @@
         "on-drop",
         "m4a-output",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/media/extract-audio",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_path",
+            "type": "string",
+            "path_kind": "any"
+          }
+        ]
+      }
     },
     {
       "slug": "official/media/transcribe-audio",
       "name": "transcribe-audio",
       "description": "Drop an audio file to transcribe it locally via Whisper. Returns a plain-text transcript.",
-      "llm_hint": "Fires on file drop. Transcribes a local audio file (mp3/m4a/wav/flac) using Whisper — fully local, no network. Returns {transcript}. Whisper runs the audio and returns text to stdout. Pairs with official/media/youtube-dl: download audio, then drop the saved file to transcribe. Requires whisper sidecar installed.",
+      "llm_hint": "Fires on file drop. Expects a concrete audio file path (for composition, treat this as `audio_file_path`: mp3/m4a/wav/flac), then transcribes locally with Whisper. Returns {transcript}. Whisper runs the audio and returns text to stdout. Pairs with official/media/youtube-dl after selecting a file inside `saved_dir_path`. Requires whisper sidecar installed.",
       "trigger": "on-drop",
       "composable": true,
       "remote_expose": false,
@@ -226,12 +321,12 @@
         "whisper"
       ],
       "requires": [],
-      "raw_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/sha256-a347b0addbfd55af2cb41dd642c73c6e89001539f4f658649b9446fc7e5a8aea/skill.md",
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/sha256-a5ce9cf55ec07379492c814cbe546ac07949ef9fa52866f84451f332968bd022/skill.md",
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/skill.md",
-      "hash": "sha256:a347b0addbfd55af2cb41dd642c73c6e89001539f4f658649b9446fc7e5a8aea",
-      "size_bytes": 1541,
-      "added_at": "2026-04-19T14:10:25.104406131Z",
-      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "hash": "sha256:a5ce9cf55ec07379492c814cbe546ac07949ef9fa52866f84451f332968bd022",
+      "size_bytes": 1609,
+      "added_at": "2026-04-20T04:11:03.930591189Z",
+      "last_modified_at": "2026-04-20T04:11:03.930591189Z",
       "category": "media",
       "tags": [
         "audio-transcription",
@@ -240,7 +335,20 @@
         "on-drop",
         "local-processing",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/media/transcribe-audio",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "transcript"
+        ],
+        "output_contract": [
+          {
+            "name": "transcript",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/media/video-to-gif",
@@ -259,8 +367,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/skill.md",
       "hash": "sha256:09047b056a26b38cd3f1da095843a46d67cce6b26674c30ed1b5c5a9de675747",
       "size_bytes": 1254,
-      "added_at": "2026-04-19T14:10:25.104406131Z",
-      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "added_at": "2026-04-20T04:11:03.930591189Z",
+      "last_modified_at": "2026-04-20T04:11:03.930591189Z",
       "category": "media",
       "tags": [
         "gif-conversion",
@@ -268,13 +376,27 @@
         "video-processing",
         "on-drop",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/media/video-to-gif",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_path",
+            "type": "string",
+            "path_kind": "any"
+          }
+        ]
+      }
     },
     {
       "slug": "official/media/youtube-dl",
       "name": "youtube-dl",
       "description": "Downloads audio from a YouTube URL copied to the clipboard into ~/Downloads/.",
-      "llm_hint": "Fires when a YouTube URL is copied. Downloads audio to ~/Downloads/ via yt-dlp. Returns {saved_path} — the download directory (~/Downloads/); the exact filename is not surfaced without registry flags not in the contract. Compose with official/media/transcribe-audio by dropping the saved file onto the ClawWidget drop zone to produce a transcript. Single-video only — not for playlists. Requires yt-dlp sidecar.",
+      "llm_hint": "Fires when a YouTube URL is copied. Downloads audio from a YouTube video URL to ~/Downloads/ via yt-dlp. Returns {saved_dir_path} — a directory path (~/Downloads/), not a concrete file path. Do not pass {saved_dir_path} directly to file-path inputs such as transcribe-audio's `audio_file_path`; choose a concrete file first. Single-video only — not for playlists. Requires yt-dlp sidecar.",
       "trigger": "on-clipboard",
       "composable": true,
       "remote_expose": false,
@@ -283,22 +405,36 @@
         "yt-dlp"
       ],
       "requires": [],
-      "raw_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/sha256-1e06ec7ab04d4a81bab1aecfaf22e9830b0b3e30973d98a76c5c982d51cd3dd8/skill.md",
+      "raw_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/sha256-3f819eccca3a7a89f5207740400d00781f18b0c9528ec54420e7eee012200198/skill.md",
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/skill.md",
-      "hash": "sha256:1e06ec7ab04d4a81bab1aecfaf22e9830b0b3e30973d98a76c5c982d51cd3dd8",
-      "size_bytes": 2008,
-      "added_at": "2026-04-19T14:10:25.104406131Z",
-      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "hash": "sha256:3f819eccca3a7a89f5207740400d00781f18b0c9528ec54420e7eee012200198",
+      "size_bytes": 2117,
+      "added_at": "2026-04-20T04:11:03.930591189Z",
+      "last_modified_at": "2026-04-20T04:11:03.930591189Z",
       "category": "media",
       "tags": [
         "youtube",
+        "video-download",
         "audio-download",
         "clipboard-url",
         "media-ingest",
-        "ytdlp",
         "yt-dlp",
         "composable"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/media/youtube-dl",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "saved_dir_path"
+        ],
+        "output_contract": [
+          {
+            "name": "saved_dir_path",
+            "type": "string",
+            "path_kind": "directory"
+          }
+        ]
+      }
     },
     {
       "slug": "official/productivity/clipboard-action-items",
@@ -317,8 +453,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/skill.md",
       "hash": "sha256:0589e2d5144a50e03dec0183380852dce108bd1a2fd1a785d8e8f0c2d2853186",
       "size_bytes": 1852,
-      "added_at": "2026-04-19T14:10:25.104406131Z",
-      "last_modified_at": "2026-04-19T14:10:25.104406131Z",
+      "added_at": "2026-04-20T04:11:03.930591189Z",
+      "last_modified_at": "2026-04-20T04:11:03.930591189Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -326,7 +462,20 @@
         "task-extraction",
         "on-clipboard",
         "llm"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/productivity/clipboard-action-items",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "action_items"
+        ],
+        "output_contract": [
+          {
+            "name": "action_items",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/productivity/clipboard-proofread",
@@ -345,8 +494,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/skill.md",
       "hash": "sha256:841eb0b5049df8558f0516f39754736116c7445526ab8573b333ab14f24ab7ed",
       "size_bytes": 1653,
-      "added_at": "2026-04-19T14:10:25.104885075Z",
-      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "added_at": "2026-04-20T04:11:03.930863368Z",
+      "last_modified_at": "2026-04-20T04:11:03.930863368Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -354,7 +503,20 @@
         "proofread",
         "on-clipboard",
         "llm"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/productivity/clipboard-proofread",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "corrected_text"
+        ],
+        "output_contract": [
+          {
+            "name": "corrected_text",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/productivity/clipboard-summary",
@@ -373,8 +535,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/skill.md",
       "hash": "sha256:9efa1c6e9e112c16155779083d933ffbab2f1a82916751dc9749bb86304836f9",
       "size_bytes": 1627,
-      "added_at": "2026-04-19T14:10:25.104885075Z",
-      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "added_at": "2026-04-20T04:11:03.930863368Z",
+      "last_modified_at": "2026-04-20T04:11:03.930863368Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -382,7 +544,20 @@
         "bullet-summary",
         "on-clipboard",
         "requires-chain"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/productivity/clipboard-summary",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "summary"
+        ],
+        "output_contract": [
+          {
+            "name": "summary",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/productivity/clipboard-translate-to-english",
@@ -401,8 +576,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/skill.md",
       "hash": "sha256:bf8d025d517fc9633073667bf770841d0625a4acfdbc760435c4426d494cd27d",
       "size_bytes": 1764,
-      "added_at": "2026-04-19T14:10:25.104885075Z",
-      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "added_at": "2026-04-20T04:11:03.930863368Z",
+      "last_modified_at": "2026-04-20T04:11:03.930863368Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -410,7 +585,20 @@
         "english",
         "on-clipboard",
         "llm"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/productivity/clipboard-translate-to-english",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "english_text"
+        ],
+        "output_contract": [
+          {
+            "name": "english_text",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "slug": "official/utilities/notify",
@@ -427,8 +615,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/utilities/notify/skill.md",
       "hash": "sha256:616bdb60adb4bd3958067a1d81f5545fd4327b3970e786fdeee505c49af3bda0",
       "size_bytes": 1262,
-      "added_at": "2026-04-19T14:10:25.104885075Z",
-      "last_modified_at": "2026-04-19T14:10:25.104885075Z",
+      "added_at": "2026-04-20T04:11:03.930863368Z",
+      "last_modified_at": "2026-04-20T04:11:03.930863368Z",
       "category": "utilities",
       "tags": [
         "notification",
@@ -436,7 +624,20 @@
         "manual-trigger",
         "composable",
         "utility"
-      ]
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/utilities/notify",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": [
+          "sent"
+        ],
+        "output_contract": [
+          {
+            "name": "sent",
+            "type": "string"
+          }
+        ]
+      }
     }
   ]
 }
