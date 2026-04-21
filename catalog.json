@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "registry": "official",
   "registry_url": "https://agents.clawwidget.com",
-  "generated_at": "2026-04-20T22:30:56.873212388Z",
+  "generated_at": "2026-04-21T11:20:40.722972680Z",
   "generator": {
     "name": "cwidget-catalog-builder",
     "version": "1.2.1",
-    "commit": "ed9f4f73796660db601b45c8b5e8d02c5ca250b0"
+    "commit": "84ad559acf57ef2aaac50ee081f77b7fa4ee68fa"
   },
   "skill_count": 16,
   "skills": [
@@ -27,8 +27,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/skill.md",
       "hash": "sha256:8053d89a208b3be598261a525810bbdcd8426c521645523fdac0848ba49ea790",
       "size_bytes": 1467,
-      "added_at": "2026-04-20T22:28:45.494055211Z",
-      "last_modified_at": "2026-04-20T22:28:45.494055211Z",
+      "added_at": "2026-04-21T11:18:24.385907301Z",
+      "last_modified_at": "2026-04-21T11:18:24.385907301Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -69,8 +69,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/skill.md",
       "hash": "sha256:9726f785f73abc5a3bde92b55c518fda4361c28128dfdc87402dd6d7824806b9",
       "size_bytes": 1217,
-      "added_at": "2026-04-20T22:28:45.494143286Z",
-      "last_modified_at": "2026-04-20T22:28:45.494143286Z",
+      "added_at": "2026-04-21T11:18:24.385997058Z",
+      "last_modified_at": "2026-04-21T11:18:24.385997058Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -111,8 +111,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/skill.md",
       "hash": "sha256:ac32ad2991946f03b544191488aa26181538ec333715ae7de76cdc364402d97a",
       "size_bytes": 1343,
-      "added_at": "2026-04-20T22:28:45.494143286Z",
-      "last_modified_at": "2026-04-20T22:28:45.494143286Z",
+      "added_at": "2026-04-21T11:18:24.385997058Z",
+      "last_modified_at": "2026-04-21T11:18:24.385997058Z",
       "category": "documents",
       "tags": [
         "markdown",
@@ -154,8 +154,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/skill.md",
       "hash": "sha256:9c5bac3c0a6010ea005ae228c1eb64bee7883337c74eaf22b6a5a3e5dbf935b5",
       "size_bytes": 1288,
-      "added_at": "2026-04-20T22:28:45.494305258Z",
-      "last_modified_at": "2026-04-20T22:28:45.494305258Z",
+      "added_at": "2026-04-21T11:18:24.386155604Z",
+      "last_modified_at": "2026-04-21T11:18:24.386155604Z",
       "category": "documents",
       "tags": [
         "pdf-extraction",
@@ -196,8 +196,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/skill.md",
       "hash": "sha256:af290afbff4652a882a34b81a3bcec13aeee7493c95c695d16cde11c3fca0115",
       "size_bytes": 1405,
-      "added_at": "2026-04-20T22:28:45.494305258Z",
-      "last_modified_at": "2026-04-20T22:28:45.494305258Z",
+      "added_at": "2026-04-21T11:18:24.386155604Z",
+      "last_modified_at": "2026-04-21T11:18:24.386155604Z",
       "category": "graphics",
       "tags": [
         "ocr",
@@ -225,20 +225,20 @@
     {
       "slug": "official/graphics/screenshot-design-review",
       "name": "screenshot-design-review",
-      "description": "Critique the UI in a screenshot and put markdown on the clipboard. Fires on new screenshot files on the Desktop, or when you copy an image to the clipboard (people often say screenshots or UI feedback).",
-      "llm_hint": "Fires on on-screenshot (Desktop file watcher) or on-clipboard-image (copied image in clipboard). Runs llm.ask --image on your vision route, writes markdown UI critique to the clipboard, then a short notify. Returns {critique_markdown}. Requires runtime.vision route + BYOK LLM key; fs read is scoped to ~/Desktop/ only. Output is LLM-dependent (non-deterministic).",
+      "description": "Critique the UI in a screenshot, save a markdown file to `~/Documents/authoring/`, and copy the critique to the clipboard. Fires on new screenshot files on the Desktop, or when you copy an image to the clipboard (people often say screenshots or UI feedback).",
+      "llm_hint": "Fires on on-screenshot (Desktop file watcher) or on-clipboard-image (copied image in clipboard). Runs llm.ask --image on your vision route, writes a markdown UI critique to ~/Documents/authoring/latest-critique.md and to the clipboard, then emits a completion notification with file actions. Returns {critique_file}. Requires runtime.vision route + BYOK LLM key; fs read is scoped to ~/Desktop/ only and fs write is scoped to ~/Documents/authoring/. Output is LLM-dependent (non-deterministic).",
       "trigger": "on-screenshot",
       "composable": true,
       "remote_expose": false,
       "human_in_loop": false,
       "sidecars_required": [],
       "requires": [],
-      "raw_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review/sha256-5a1578120fd44222fe00257ea18b42a7d42892a5de14f7522ebfc23be0dd4360/skill.md",
+      "raw_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review/sha256-1440105b45c61f1cc312d30b3fb7bd3fdff0856a26781643d2faed568e0ca8df/skill.md",
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review/skill.md",
-      "hash": "sha256:5a1578120fd44222fe00257ea18b42a7d42892a5de14f7522ebfc23be0dd4360",
-      "size_bytes": 2016,
-      "added_at": "2026-04-20T22:28:45.494586692Z",
-      "last_modified_at": "2026-04-20T22:28:45.494586692Z",
+      "hash": "sha256:1440105b45c61f1cc312d30b3fb7bd3fdff0856a26781643d2faed568e0ca8df",
+      "size_bytes": 2600,
+      "added_at": "2026-04-21T11:18:24.386263746Z",
+      "last_modified_at": "2026-04-21T11:18:24.386263746Z",
       "category": "graphics",
       "tags": [
         "featured",
@@ -253,12 +253,12 @@
       "composition_fields": {
         "inputs": [],
         "outputs": [
-          "critique_markdown"
+          "critique_file"
         ],
         "output_contract": [
           {
-            "name": "critique_markdown",
-            "type": "string"
+            "name": "critique_file",
+            "type": "file-path"
           }
         ]
       }
@@ -280,8 +280,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/skill.md",
       "hash": "sha256:0e40bc3f296e3e3b0d3493b39811c728dd4e513c9d05a73da8bf76cc518a7997",
       "size_bytes": 1379,
-      "added_at": "2026-04-20T22:28:45.494586692Z",
-      "last_modified_at": "2026-04-20T22:28:45.494586692Z",
+      "added_at": "2026-04-21T11:18:24.386263746Z",
+      "last_modified_at": "2026-04-21T11:18:24.386263746Z",
       "category": "media",
       "tags": [
         "video-compression",
@@ -323,8 +323,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/skill.md",
       "hash": "sha256:cd06f5315cf40eb38cb30982ed822d25cc8b0e65dafad62448776aa6a0074abc",
       "size_bytes": 1287,
-      "added_at": "2026-04-20T22:28:45.494766127Z",
-      "last_modified_at": "2026-04-20T22:28:45.494766127Z",
+      "added_at": "2026-04-21T11:18:24.386382037Z",
+      "last_modified_at": "2026-04-21T11:18:24.386382037Z",
       "category": "media",
       "tags": [
         "audio-extraction",
@@ -366,8 +366,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/skill.md",
       "hash": "sha256:d737510b0167f8101183d099de223db75fe3ab1dd08dfacd05af522ed8c30406",
       "size_bytes": 1593,
-      "added_at": "2026-04-20T22:28:45.494766127Z",
-      "last_modified_at": "2026-04-20T22:28:45.494766127Z",
+      "added_at": "2026-04-21T11:18:24.386382037Z",
+      "last_modified_at": "2026-04-21T11:18:24.386382037Z",
       "category": "media",
       "tags": [
         "audio-transcription",
@@ -408,8 +408,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/skill.md",
       "hash": "sha256:23c37a218d6f9d6e59020ebe398bb8f541440a739f80bd20c3a6cdfa65065729",
       "size_bytes": 1253,
-      "added_at": "2026-04-20T22:28:45.494766127Z",
-      "last_modified_at": "2026-04-20T22:28:45.494766127Z",
+      "added_at": "2026-04-21T11:18:24.386382037Z",
+      "last_modified_at": "2026-04-21T11:18:24.386382037Z",
       "category": "media",
       "tags": [
         "gif-conversion",
@@ -450,8 +450,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/skill.md",
       "hash": "sha256:fda8e9d429b8643a217e7eb7352382fc2e8f810ed7d547d3c0a2bcacfcb5fff9",
       "size_bytes": 2191,
-      "added_at": "2026-04-20T22:28:45.494766127Z",
-      "last_modified_at": "2026-04-20T22:28:45.494766127Z",
+      "added_at": "2026-04-21T11:18:24.386382037Z",
+      "last_modified_at": "2026-04-21T11:18:24.386382037Z",
       "category": "media",
       "tags": [
         "youtube",
@@ -494,8 +494,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/skill.md",
       "hash": "sha256:750ba2b0b9014af8fb31f84c2e53d673fc03408ae978d69965925a97391fffca",
       "size_bytes": 1861,
-      "added_at": "2026-04-20T22:28:45.494766127Z",
-      "last_modified_at": "2026-04-20T22:28:45.494766127Z",
+      "added_at": "2026-04-21T11:18:24.386382037Z",
+      "last_modified_at": "2026-04-21T11:18:24.386382037Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -535,8 +535,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/skill.md",
       "hash": "sha256:a310ab6d950cc8cde339e1af2f7427b98ef41411255eb1ff4be985aa02dfde07",
       "size_bytes": 1684,
-      "added_at": "2026-04-20T22:28:45.495111030Z",
-      "last_modified_at": "2026-04-20T22:28:45.495111030Z",
+      "added_at": "2026-04-21T11:18:24.386707235Z",
+      "last_modified_at": "2026-04-21T11:18:24.386707235Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -576,8 +576,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/skill.md",
       "hash": "sha256:c8822d9d59f9a07ab69e639708f40a1a9c50d6496fe26170314ff091cc8f3fed",
       "size_bytes": 1631,
-      "added_at": "2026-04-20T22:28:45.495111030Z",
-      "last_modified_at": "2026-04-20T22:28:45.495111030Z",
+      "added_at": "2026-04-21T11:18:24.386707235Z",
+      "last_modified_at": "2026-04-21T11:18:24.386707235Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -617,8 +617,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/skill.md",
       "hash": "sha256:05a8334dd6a095dc437672d639e450f9cb77f8f88408e674fcffb460c9f6a483",
       "size_bytes": 1771,
-      "added_at": "2026-04-20T22:28:45.495111030Z",
-      "last_modified_at": "2026-04-20T22:28:45.495111030Z",
+      "added_at": "2026-04-21T11:18:24.386707235Z",
+      "last_modified_at": "2026-04-21T11:18:24.386707235Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -656,8 +656,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/utilities/notify/skill.md",
       "hash": "sha256:d3c47e3507825476e0bc0de81071d127cb462dcf4a4d2943dd4fb0611ef31eab",
       "size_bytes": 1281,
-      "added_at": "2026-04-20T22:28:45.495111030Z",
-      "last_modified_at": "2026-04-20T22:28:45.495111030Z",
+      "added_at": "2026-04-21T11:18:24.386707235Z",
+      "last_modified_at": "2026-04-21T11:18:24.386707235Z",
       "category": "utilities",
       "tags": [
         "notification",
