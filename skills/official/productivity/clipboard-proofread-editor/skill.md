@@ -36,7 +36,6 @@ Turns copied text into an editable proofread draft while keeping the original te
 11. $VALUES = cwidget json set $VALUES --path draft_instructions --value "Return plain text only. Preserve the original meaning and tone."
 12. $PAYLOAD = cwidget json parse '{"layout":"source_editor"}'
 13. $PAYLOAD = cwidget json set $PAYLOAD --path values --value $VALUES
-14. $HANDOFF = cwidget json parse '{"layout":"source_editor","run_id":"","triggered_by":{"kind":"user_gesture","trigger":"on-clipboard"}}'
-15. $HANDOFF = cwidget json set $HANDOFF --path payload --value $PAYLOAD
-16. $HANDOFF = cwidget json set $HANDOFF --path run_id --value $RUN_ID
+14. $HANDOFF = cwidget concat '{"layout":"source_editor","payload":' "$PAYLOAD" ',"run_id":"' "$RUN_ID"
+15. $HANDOFF = cwidget concat "$HANDOFF" '","triggered_by":{"kind":"user_gesture","trigger":"on-clipboard"}}'
 ```

@@ -44,7 +44,6 @@ Builds a design-review draft from a copied image or screenshot, then opens `sour
 9. $VALUES = cwidget json set $VALUES --path draft_instructions --value "Return plain text only. Keep the critique concise and actionable."
 10. $PAYLOAD = cwidget json parse '{"layout":"source_editor"}'
 11. $PAYLOAD = cwidget json set $PAYLOAD --path values --value $VALUES
-12. $HANDOFF = cwidget json parse '{"layout":"source_editor","run_id":"","triggered_by":{"kind":"user_gesture","trigger":"on-clipboard-image"}}'
-13. $HANDOFF = cwidget json set $HANDOFF --path payload --value $PAYLOAD
-14. $HANDOFF = cwidget json set $HANDOFF --path run_id --value $RUN_ID
+12. $HANDOFF = cwidget concat '{"layout":"source_editor","payload":' "$PAYLOAD" ',"run_id":"' "$RUN_ID"
+13. $HANDOFF = cwidget concat "$HANDOFF" '","triggered_by":{"kind":"user_gesture","trigger":"on-clipboard-image"}}'
 ```
