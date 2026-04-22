@@ -3,7 +3,7 @@
   "registry_name": "ClawWidget Official",
   "registry_url": "https://agents.clawwidget.com",
   "catalog_url": "https://agents.clawwidget.com/catalog.json",
-  "skill_count": 16,
+  "skill_count": 19,
   "description": "Curated, PR-reviewed atomic skills for ClawWidget. Each skill is an inspectable Markdown file, sandboxed at execution, composable via `cwidget skill call`.",
   "publisher": {
     "name": "ClawWidget",
