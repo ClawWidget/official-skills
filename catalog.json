@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "registry": "official",
   "registry_url": "https://agents.clawwidget.com",
-  "generated_at": "2026-04-22T05:52:59.286779823Z",
+  "generated_at": "2026-04-22T12:52:34.558813726Z",
   "generator": {
     "name": "cwidget-catalog-builder",
     "version": "1.2.1",
-    "commit": "d89c88992a62fe02a5de54b4f02dbf79f85b0d53"
+    "commit": "da4c5acdbf02abe3b8f092561ec827220c4d3c36"
   },
-  "skill_count": 19,
+  "skill_count": 21,
   "skills": [
     {
       "slug": "official/data/csv-rolling-average",
@@ -28,8 +28,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/skill.md",
       "hash": "sha256:2da762243082531ee2f2af39101432a2f327ec75df79c971cb0f3bf09ac5571e",
       "size_bytes": 1479,
-      "added_at": "2026-04-22T05:50:49.266792583Z",
-      "last_modified_at": "2026-04-22T05:50:49.266792583Z",
+      "added_at": "2026-04-22T12:50:27.573922701Z",
+      "last_modified_at": "2026-04-22T12:50:27.573922701Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -71,8 +71,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/skill.md",
       "hash": "sha256:1689186f969e079ca4d1fc41ce58f6923d9afc6ca2f11a90163f9a1dd7af1643",
       "size_bytes": 1204,
-      "added_at": "2026-04-22T05:50:49.266954736Z",
-      "last_modified_at": "2026-04-22T05:50:49.266954736Z",
+      "added_at": "2026-04-22T12:50:27.574012749Z",
+      "last_modified_at": "2026-04-22T12:50:27.574012749Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -114,8 +114,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/skill.md",
       "hash": "sha256:24c3ed2a1c48ac5bddd736fb316a288bb6c36a91200a763de81f32ff6eaf8578",
       "size_bytes": 1327,
-      "added_at": "2026-04-22T05:50:49.266954736Z",
-      "last_modified_at": "2026-04-22T05:50:49.266954736Z",
+      "added_at": "2026-04-22T12:50:27.574110672Z",
+      "last_modified_at": "2026-04-22T12:50:27.574110672Z",
       "category": "documents",
       "tags": [
         "markdown",
@@ -158,8 +158,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/skill.md",
       "hash": "sha256:09bfaf6e7294e648a16ba5371562c1b460fdd62f2aaf0c840b1a6574e20a6f90",
       "size_bytes": 1254,
-      "added_at": "2026-04-22T05:50:49.267239819Z",
-      "last_modified_at": "2026-04-22T05:50:49.267239819Z",
+      "added_at": "2026-04-22T12:50:27.574110672Z",
+      "last_modified_at": "2026-04-22T12:50:27.574110672Z",
       "category": "documents",
       "tags": [
         "pdf-extraction",
@@ -201,8 +201,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/skill.md",
       "hash": "sha256:241a55255b19c5b1c1a27fe388ab38e319362854ec2948196bf25bfef9634eb6",
       "size_bytes": 1382,
-      "added_at": "2026-04-22T05:50:49.267239819Z",
-      "last_modified_at": "2026-04-22T05:50:49.267239819Z",
+      "added_at": "2026-04-22T12:50:27.574110672Z",
+      "last_modified_at": "2026-04-22T12:50:27.574110672Z",
       "category": "graphics",
       "tags": [
         "ocr",
@@ -228,6 +228,39 @@
       }
     },
     {
+      "slug": "official/graphics/screenshot-design-review-editor",
+      "name": "screenshot-design-review-editor",
+      "description": "Opens an editable screenshot critique beside the exact image that triggered it.",
+      "llm_hint": "Fires on on-clipboard-image immediately or on-screenshot through the background queue. Runs llm.ask --image on the vision route to draft a UI critique, then opens source_editor with the local screenshot on the left and an editable plain-text critique on the right. The draft stays local-first and inspectable.",
+      "usage_hint": "Copy an image or take a screenshot to open an editable design-review draft.",
+      "trigger": "on-clipboard-image",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review-editor/sha256-04a5f6c7f71f4d0de22b2ca274c9e6911ab908e677543beeb8f53e0dba71dd30/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review-editor/skill.md",
+      "hash": "sha256:04a5f6c7f71f4d0de22b2ca274c9e6911ab908e677543beeb8f53e0dba71dd30",
+      "size_bytes": 2642,
+      "added_at": "2026-04-22T12:50:27.574310622Z",
+      "last_modified_at": "2026-04-22T12:50:27.574310622Z",
+      "category": "graphics",
+      "tags": [
+        "featured",
+        "design",
+        "screenshot",
+        "vision",
+        "atomic-windows",
+        "source-editor"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/graphics/screenshot-design-review-editor",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": []
+      }
+    },
+    {
       "slug": "official/graphics/screenshot-design-review",
       "name": "screenshot-design-review",
       "description": "Turns any screenshot into a sharp, paste-ready markdown UI critique.",
@@ -243,8 +276,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review/skill.md",
       "hash": "sha256:c8a4fb7e651e2cbbfd5c8db8739380a284c6c2875f359bc991aa04b6a6997e1a",
       "size_bytes": 2520,
-      "added_at": "2026-04-22T05:50:49.267443440Z",
-      "last_modified_at": "2026-04-22T05:50:49.267443440Z",
+      "added_at": "2026-04-22T12:50:27.574310622Z",
+      "last_modified_at": "2026-04-22T12:50:27.574310622Z",
       "category": "graphics",
       "tags": [
         "featured",
@@ -287,8 +320,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/skill.md",
       "hash": "sha256:d472980cf447800ccd35528089055a71dcfecbd6f8745f960eb226fc4e52c900",
       "size_bytes": 1332,
-      "added_at": "2026-04-22T05:50:49.267443440Z",
-      "last_modified_at": "2026-04-22T05:50:49.267443440Z",
+      "added_at": "2026-04-22T12:50:27.574310622Z",
+      "last_modified_at": "2026-04-22T12:50:27.574310622Z",
       "category": "media",
       "tags": [
         "video-compression",
@@ -331,8 +364,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/skill.md",
       "hash": "sha256:aa2d00777abe475d0d1b80282f9c59410ae7a0bb313c4de6439c3f16ea39fbcd",
       "size_bytes": 1298,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "media",
       "tags": [
         "audio-extraction",
@@ -372,8 +405,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/local-media-review-gate/skill.md",
       "hash": "sha256:6f9cf5779d327f6a6df6150689fc1497de7e8fde496332b61b38a244cd611039",
       "size_bytes": 1998,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "media",
       "tags": [
         "atomic-windows",
@@ -406,8 +439,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/skill.md",
       "hash": "sha256:61e6ab44102a9062e5902a32bfeee6cd192f2ef8b20902c116be1ba1916ad243",
       "size_bytes": 1456,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "media",
       "tags": [
         "audio-transcription",
@@ -449,8 +482,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/skill.md",
       "hash": "sha256:6e81c5f4e9d54048a40bf6350ec71b2a98c435a1a27ba41b19cab71e0061d540",
       "size_bytes": 1206,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "media",
       "tags": [
         "gif-conversion",
@@ -492,8 +525,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/skill.md",
       "hash": "sha256:d939b9ec4a17be5cd576165ce0618323998d90a2847a651f62561b4d887f39a6",
       "size_bytes": 1978,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "media",
       "tags": [
         "youtube",
@@ -537,8 +570,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/skill.md",
       "hash": "sha256:ca71c1655a59e41f779bdf66df9828e3431333619b76baae1cb87bab6456b9c5",
       "size_bytes": 1702,
-      "added_at": "2026-04-22T05:50:49.267631321Z",
-      "last_modified_at": "2026-04-22T05:50:49.267631321Z",
+      "added_at": "2026-04-22T12:50:27.574460721Z",
+      "last_modified_at": "2026-04-22T12:50:27.574460721Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -562,6 +595,39 @@
       }
     },
     {
+      "slug": "official/productivity/clipboard-proofread-editor",
+      "name": "clipboard-proofread-editor",
+      "description": "Opens copied text beside an editable proofread draft before you confirm it.",
+      "llm_hint": "Fires on copied text, drafts a proofread version with llm.ask, then opens source_editor with the original clipboard text on the left and the editable proofread draft on the right. Use it when the user wants grammar cleanup without losing visibility into the source.",
+      "usage_hint": "Copy any draft to your clipboard to open an editable proofread window.",
+      "trigger": "on-clipboard",
+      "composable": false,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread-editor/sha256-708128daa16b4e2c99a74b9dd0559e0fc49163037469c07acc65fbfbc64eae52/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread-editor/skill.md",
+      "hash": "sha256:708128daa16b4e2c99a74b9dd0559e0fc49163037469c07acc65fbfbc64eae52",
+      "size_bytes": 2462,
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
+      "category": "productivity",
+      "tags": [
+        "clipboard-text",
+        "grammar-fix",
+        "proofread",
+        "on-clipboard",
+        "llm",
+        "source-editor"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/productivity/clipboard-proofread-editor",
+      "composition_fields": {
+        "inputs": [],
+        "outputs": []
+      }
+    },
+    {
       "slug": "official/productivity/clipboard-proofread",
       "name": "clipboard-proofread",
       "description": "Polishes copied text for perfect grammar and professional clarity.",
@@ -579,8 +645,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/skill.md",
       "hash": "sha256:9061c6e7729114cc56e7b52a1ce9f81c614cc8a4e9975c1de5c3f6f134e4041a",
       "size_bytes": 1536,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -621,8 +687,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/skill.md",
       "hash": "sha256:e0e60f9f664774156bf3a52cf29f17b0c370c7084f6ce3c939ae9ce7dbee709c",
       "size_bytes": 1489,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -663,8 +729,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/skill.md",
       "hash": "sha256:e3099bbbac6d536ba343d8aad210ca811233c845add88f2040124c83f875954e",
       "size_bytes": 1607,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -702,8 +768,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/downloads-quick-find/skill.md",
       "hash": "sha256:da741de57688b240c9a39a8fb05ca4b061f1f9b61809aeb21c8dedf386985130",
       "size_bytes": 1172,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "productivity",
       "tags": [
         "atomic-windows",
@@ -733,8 +799,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/downloads-triage-grid/skill.md",
       "hash": "sha256:8e54206a849a1c194613a55509bf920072c682a23926c2e251725b1932e7725f",
       "size_bytes": 1178,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "productivity",
       "tags": [
         "atomic-windows",
@@ -765,8 +831,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/utilities/notify/skill.md",
       "hash": "sha256:44ef6201dd1028ce73d371a30650f230098b900e67ff80b60ec17d71a81206ea",
       "size_bytes": 1119,
-      "added_at": "2026-04-22T05:50:49.268128531Z",
-      "last_modified_at": "2026-04-22T05:50:49.268128531Z",
+      "added_at": "2026-04-22T12:50:27.574768333Z",
+      "last_modified_at": "2026-04-22T12:50:27.574768333Z",
       "category": "utilities",
       "tags": [
         "notification",
