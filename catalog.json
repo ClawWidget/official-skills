@@ -2,14 +2,404 @@
   "schema_version": "1.0",
   "registry": "official",
   "registry_url": "https://agents.clawwidget.com",
-  "generated_at": "2026-04-22T19:48:59.359811188Z",
+  "generated_at": "2026-04-29T20:09:07.760839403Z",
   "generator": {
     "name": "cwidget-catalog-builder",
     "version": "1.2.1",
-    "commit": "d31b8dad54ae9fbf5e1f06abd98b87e12cc7337c"
+    "commit": "02cee664b80255b7a943aef0c208c9486e36f6f3"
   },
-  "skill_count": 21,
+  "skill_count": 29,
   "skills": [
+    {
+      "slug": "official/adapters/dir-to-single-file",
+      "name": "dir-to-single-file",
+      "description": "Returns the only file in a directory; fails if the directory has zero or multiple files.",
+      "llm_hint": "Call between a skill whose output is path-dir and a skill whose input is path-file when the directory is expected to contain one file.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a directory path when the next skill expects a file path and exactly one file is expected.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/dir-to-single-file/sha256-84687d98ab2515dbf25c97d414255d88065fb0cf0db4547eaa80d581e822943f/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/dir-to-single-file/skill.md",
+      "hash": "sha256:84687d98ab2515dbf25c97d414255d88065fb0cf0db4547eaa80d581e822943f",
+      "size_bytes": 1568,
+      "added_at": "2026-04-29T20:06:45.479503440Z",
+      "last_modified_at": "2026-04-29T20:06:45.479503440Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "path-coercion",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/dir-to-single-file",
+      "composition_fields": {
+        "inputs": [
+          "dir"
+        ],
+        "outputs": [
+          "single_file"
+        ],
+        "input_contract": [
+          {
+            "name": "dir",
+            "type": "string",
+            "semantic_kind": "path-dir"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "single_file",
+            "type": "string",
+            "semantic_kind": "path-file"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/file-to-text",
+      "name": "file-to-text",
+      "description": "Reads a UTF-8 file and returns its plain-text contents as a string.",
+      "llm_hint": "Call between a skill whose output is path-file and a skill whose input is text when the file's UTF-8 content is needed as a plain string.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a file path when the next skill expects a text string.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/file-to-text/sha256-06a42ec68fb6efb7a91e79ee0570348fb828ada8fd101ec4396c76ba9bea8920/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/file-to-text/skill.md",
+      "hash": "sha256:06a42ec68fb6efb7a91e79ee0570348fb828ada8fd101ec4396c76ba9bea8920",
+      "size_bytes": 1251,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "file-read",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/file-to-text",
+      "composition_fields": {
+        "inputs": [
+          "file_path"
+        ],
+        "outputs": [
+          "text_content"
+        ],
+        "input_contract": [
+          {
+            "name": "file_path",
+            "type": "string",
+            "path_kind": "any",
+            "semantic_kind": "path-file"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "text_content",
+            "type": "string",
+            "semantic_kind": "text"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/json-to-file",
+      "name": "json-to-file",
+      "description": "Serializes a JSON value to a scoped temporary file and returns the file path.",
+      "llm_hint": "Call between a skill whose output is json and a skill whose input is path-file when the JSON must be written to a temporary file first.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits JSON when the next skill expects a file path.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/json-to-file/sha256-7486825caed002a786d1022d440e563fbaf9220ec55d98dd77ceb655ea94447c/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/json-to-file/skill.md",
+      "hash": "sha256:7486825caed002a786d1022d440e563fbaf9220ec55d98dd77ceb655ea94447c",
+      "size_bytes": 1463,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "json-write",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/json-to-file",
+      "composition_fields": {
+        "inputs": [
+          "json_value"
+        ],
+        "outputs": [
+          "file_path"
+        ],
+        "input_contract": [
+          {
+            "name": "json_value",
+            "type": "string",
+            "semantic_kind": "json"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "file_path",
+            "type": "string",
+            "path_kind": "any",
+            "semantic_kind": "path-file"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/path-dir-to-json-list",
+      "name": "path-dir-to-json-list",
+      "description": "Lists directory entries and emits a JSON array of file paths.",
+      "llm_hint": "Call between a skill whose output is path-dir and a skill whose input is json when the directory contents must be enumerated as a JSON array.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a directory path when the next skill expects a JSON array of file paths.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/path-dir-to-json-list/sha256-e4ab0136c694d7848d4f3db8b390fc87b371a921fce0a5457493033123c2b5db/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/path-dir-to-json-list/skill.md",
+      "hash": "sha256:e4ab0136c694d7848d4f3db8b390fc87b371a921fce0a5457493033123c2b5db",
+      "size_bytes": 1324,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "path-coercion",
+        "json-list",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/path-dir-to-json-list",
+      "composition_fields": {
+        "inputs": [
+          "dir"
+        ],
+        "outputs": [
+          "entries_json"
+        ],
+        "input_contract": [
+          {
+            "name": "dir",
+            "type": "string",
+            "semantic_kind": "path-dir"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "entries_json",
+            "type": "string",
+            "semantic_kind": "json"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/path-file-to-json",
+      "name": "path-file-to-json",
+      "description": "Reads a file and parses its contents as JSON.",
+      "llm_hint": "Call between a skill whose output is path-file and a skill whose input is json when the file contains JSON that must be parsed into a structured value.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a file path when the next skill expects structured JSON parsed from that file.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/path-file-to-json/sha256-603ae43e75522d2b81383bd2dbcac5ef2f426c35bb466f90a88d0138a5f2442c/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/path-file-to-json/skill.md",
+      "hash": "sha256:603ae43e75522d2b81383bd2dbcac5ef2f426c35bb466f90a88d0138a5f2442c",
+      "size_bytes": 1322,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "json-parse",
+        "file-read",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/path-file-to-json",
+      "composition_fields": {
+        "inputs": [
+          "file_path"
+        ],
+        "outputs": [
+          "json_value"
+        ],
+        "input_contract": [
+          {
+            "name": "file_path",
+            "type": "string",
+            "path_kind": "any",
+            "semantic_kind": "path-file"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "json_value",
+            "type": "string",
+            "semantic_kind": "json"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/text-to-dir",
+      "name": "text-to-dir",
+      "description": "Interprets a text string as a directory path, creates it if needed, and returns the directory path.",
+      "llm_hint": "Call between a skill whose output is text (a path string) and a skill whose input is path-dir when the directory must exist before the next step.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a path string as text when the next skill expects a typed directory path.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-dir/sha256-4e189df717782c509c42a98a85f3841d15d33b174bb25ed770f5ec8c2115e8b6/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-dir/skill.md",
+      "hash": "sha256:4e189df717782c509c42a98a85f3841d15d33b174bb25ed770f5ec8c2115e8b6",
+      "size_bytes": 1482,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "path-coercion",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/text-to-dir",
+      "composition_fields": {
+        "inputs": [
+          "text"
+        ],
+        "outputs": [
+          "resolved_dir"
+        ],
+        "input_contract": [
+          {
+            "name": "text",
+            "type": "string",
+            "semantic_kind": "text"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "resolved_dir",
+            "type": "string",
+            "semantic_kind": "path-dir"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/text-to-file",
+      "name": "text-to-file",
+      "description": "Writes a string to an isolated temporary file and returns the file path.",
+      "llm_hint": "Call between a skill whose output is text and a skill whose input is path-file when the text must be written to a temporary file first.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a text string when the next skill expects a file path.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-file/sha256-cec40bed4c6f45002cbaa8fc8d836e0c41b8793689d23b9d18ba9e638e736cb2/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-file/skill.md",
+      "hash": "sha256:cec40bed4c6f45002cbaa8fc8d836e0c41b8793689d23b9d18ba9e638e736cb2",
+      "size_bytes": 1397,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "file-write",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/text-to-file",
+      "composition_fields": {
+        "inputs": [
+          "text_content"
+        ],
+        "outputs": [
+          "file_path"
+        ],
+        "input_contract": [
+          {
+            "name": "text_content",
+            "type": "string",
+            "semantic_kind": "text"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "file_path",
+            "type": "string",
+            "path_kind": "any",
+            "semantic_kind": "path-file"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "official/adapters/text-to-json",
+      "name": "text-to-json",
+      "description": "Parses a JSON-formatted text string and emits structured JSON.",
+      "llm_hint": "Call between a skill whose output is text (containing valid JSON) and a skill whose input is json when the text must be parsed and validated as JSON.",
+      "usage_hint": "Type-coercion adapter — chain after a skill that emits a JSON string as text when the next skill expects structured JSON.",
+      "trigger": "manual",
+      "composable": true,
+      "remote_expose": false,
+      "human_in_loop": false,
+      "sidecars_required": [],
+      "requires": [],
+      "raw_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-json/sha256-1736db30f7468800d0b6284b159dd0c3a073d3ec52d41158a3815319317b85ff/skill.md",
+      "canonical_url": "https://agents.clawwidget.com/skills/official/adapters/text-to-json/skill.md",
+      "hash": "sha256:1736db30f7468800d0b6284b159dd0c3a073d3ec52d41158a3815319317b85ff",
+      "size_bytes": 1218,
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
+      "category": "adapters",
+      "tags": [
+        "adapter",
+        "json-parse",
+        "composable"
+      ],
+      "mcp_resource_uri": "clawwidget://catalog/skill/official/adapters/text-to-json",
+      "composition_fields": {
+        "inputs": [
+          "text"
+        ],
+        "outputs": [
+          "json_value"
+        ],
+        "input_contract": [
+          {
+            "name": "text",
+            "type": "string",
+            "semantic_kind": "text"
+          }
+        ],
+        "output_contract": [
+          {
+            "name": "json_value",
+            "type": "string",
+            "semantic_kind": "json"
+          }
+        ]
+      }
+    },
     {
       "slug": "official/data/csv-rolling-average",
       "name": "csv-rolling-average",
@@ -28,8 +418,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-rolling-average/skill.md",
       "hash": "sha256:2da762243082531ee2f2af39101432a2f327ec75df79c971cb0f3bf09ac5571e",
       "size_bytes": 1479,
-      "added_at": "2026-04-22T19:46:44.502359144Z",
-      "last_modified_at": "2026-04-22T19:46:44.502359144Z",
+      "added_at": "2026-04-29T20:06:45.479597596Z",
+      "last_modified_at": "2026-04-29T20:06:45.479597596Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -71,8 +461,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/data/csv-sum-column/skill.md",
       "hash": "sha256:1689186f969e079ca4d1fc41ce58f6923d9afc6ca2f11a90163f9a1dd7af1643",
       "size_bytes": 1204,
-      "added_at": "2026-04-22T19:46:44.502447159Z",
-      "last_modified_at": "2026-04-22T19:46:44.502447159Z",
+      "added_at": "2026-04-29T20:06:45.479925869Z",
+      "last_modified_at": "2026-04-29T20:06:45.479925869Z",
       "category": "data",
       "tags": [
         "csv-analytics",
@@ -114,8 +504,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/markdown-to-pdf/skill.md",
       "hash": "sha256:24c3ed2a1c48ac5bddd736fb316a288bb6c36a91200a763de81f32ff6eaf8578",
       "size_bytes": 1327,
-      "added_at": "2026-04-22T19:46:44.502487510Z",
-      "last_modified_at": "2026-04-22T19:46:44.502487510Z",
+      "added_at": "2026-04-29T20:06:45.479925869Z",
+      "last_modified_at": "2026-04-29T20:06:45.479925869Z",
       "category": "documents",
       "tags": [
         "markdown",
@@ -158,8 +548,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/documents/pdf-to-text/skill.md",
       "hash": "sha256:09bfaf6e7294e648a16ba5371562c1b460fdd62f2aaf0c840b1a6574e20a6f90",
       "size_bytes": 1254,
-      "added_at": "2026-04-22T19:46:44.502487510Z",
-      "last_modified_at": "2026-04-22T19:46:44.502487510Z",
+      "added_at": "2026-04-29T20:06:45.480089675Z",
+      "last_modified_at": "2026-04-29T20:06:45.480089675Z",
       "category": "documents",
       "tags": [
         "pdf-extraction",
@@ -201,8 +591,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/ocr-to-text/skill.md",
       "hash": "sha256:241a55255b19c5b1c1a27fe388ab38e319362854ec2948196bf25bfef9634eb6",
       "size_bytes": 1382,
-      "added_at": "2026-04-22T19:46:44.502487510Z",
-      "last_modified_at": "2026-04-22T19:46:44.502487510Z",
+      "added_at": "2026-04-29T20:06:45.480089675Z",
+      "last_modified_at": "2026-04-29T20:06:45.480089675Z",
       "category": "graphics",
       "tags": [
         "ocr",
@@ -243,8 +633,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review-editor/skill.md",
       "hash": "sha256:a45525b54dfa3f117952aca3da497b6f9e5413196b443d74f07653161e35ecf6",
       "size_bytes": 2573,
-      "added_at": "2026-04-22T19:46:44.502742554Z",
-      "last_modified_at": "2026-04-22T19:46:44.502742554Z",
+      "added_at": "2026-04-29T20:06:45.480195843Z",
+      "last_modified_at": "2026-04-29T20:06:45.480195843Z",
       "category": "graphics",
       "tags": [
         "featured",
@@ -276,8 +666,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/graphics/screenshot-design-review/skill.md",
       "hash": "sha256:c8a4fb7e651e2cbbfd5c8db8739380a284c6c2875f359bc991aa04b6a6997e1a",
       "size_bytes": 2520,
-      "added_at": "2026-04-22T19:46:44.502742554Z",
-      "last_modified_at": "2026-04-22T19:46:44.502742554Z",
+      "added_at": "2026-04-29T20:06:45.480195843Z",
+      "last_modified_at": "2026-04-29T20:06:45.480195843Z",
       "category": "graphics",
       "tags": [
         "featured",
@@ -320,8 +710,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/compress-video-720p/skill.md",
       "hash": "sha256:d472980cf447800ccd35528089055a71dcfecbd6f8745f960eb226fc4e52c900",
       "size_bytes": 1332,
-      "added_at": "2026-04-22T19:46:44.502742554Z",
-      "last_modified_at": "2026-04-22T19:46:44.502742554Z",
+      "added_at": "2026-04-29T20:06:45.480195843Z",
+      "last_modified_at": "2026-04-29T20:06:45.480195843Z",
       "category": "media",
       "tags": [
         "video-compression",
@@ -364,8 +754,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/extract-audio/skill.md",
       "hash": "sha256:aa2d00777abe475d0d1b80282f9c59410ae7a0bb313c4de6439c3f16ea39fbcd",
       "size_bytes": 1298,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "media",
       "tags": [
         "audio-extraction",
@@ -405,8 +795,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/local-media-review-gate/skill.md",
       "hash": "sha256:6f9cf5779d327f6a6df6150689fc1497de7e8fde496332b61b38a244cd611039",
       "size_bytes": 1998,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "media",
       "tags": [
         "atomic-windows",
@@ -439,8 +829,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/transcribe-audio/skill.md",
       "hash": "sha256:61e6ab44102a9062e5902a32bfeee6cd192f2ef8b20902c116be1ba1916ad243",
       "size_bytes": 1456,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "media",
       "tags": [
         "audio-transcription",
@@ -482,8 +872,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/video-to-gif/skill.md",
       "hash": "sha256:6e81c5f4e9d54048a40bf6350ec71b2a98c435a1a27ba41b19cab71e0061d540",
       "size_bytes": 1206,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "media",
       "tags": [
         "gif-conversion",
@@ -525,8 +915,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/media/youtube-dl/skill.md",
       "hash": "sha256:d939b9ec4a17be5cd576165ce0618323998d90a2847a651f62561b4d887f39a6",
       "size_bytes": 1978,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "media",
       "tags": [
         "youtube",
@@ -570,8 +960,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-action-items/skill.md",
       "hash": "sha256:ca71c1655a59e41f779bdf66df9828e3431333619b76baae1cb87bab6456b9c5",
       "size_bytes": 1702,
-      "added_at": "2026-04-22T19:46:44.502886675Z",
-      "last_modified_at": "2026-04-22T19:46:44.502886675Z",
+      "added_at": "2026-04-29T20:06:45.480371872Z",
+      "last_modified_at": "2026-04-29T20:06:45.480371872Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -610,8 +1000,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread-editor/skill.md",
       "hash": "sha256:ec3080374767133ff6003697c69528953b152ee7a20c8c69a67623d78f611ae4",
       "size_bytes": 2393,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -645,8 +1035,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-proofread/skill.md",
       "hash": "sha256:9061c6e7729114cc56e7b52a1ce9f81c614cc8a4e9975c1de5c3f6f134e4041a",
       "size_bytes": 1536,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -687,8 +1077,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-summary/skill.md",
       "hash": "sha256:e0e60f9f664774156bf3a52cf29f17b0c370c7084f6ce3c939ae9ce7dbee709c",
       "size_bytes": 1489,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -729,8 +1119,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/clipboard-translate-to-english/skill.md",
       "hash": "sha256:e3099bbbac6d536ba343d8aad210ca811233c845add88f2040124c83f875954e",
       "size_bytes": 1607,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "clipboard-text",
@@ -768,8 +1158,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/downloads-quick-find/skill.md",
       "hash": "sha256:da741de57688b240c9a39a8fb05ca4b061f1f9b61809aeb21c8dedf386985130",
       "size_bytes": 1172,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "atomic-windows",
@@ -799,8 +1189,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/productivity/downloads-triage-grid/skill.md",
       "hash": "sha256:8e54206a849a1c194613a55509bf920072c682a23926c2e251725b1932e7725f",
       "size_bytes": 1178,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "productivity",
       "tags": [
         "atomic-windows",
@@ -831,8 +1221,8 @@
       "canonical_url": "https://agents.clawwidget.com/skills/official/utilities/notify/skill.md",
       "hash": "sha256:44ef6201dd1028ce73d371a30650f230098b900e67ff80b60ec17d71a81206ea",
       "size_bytes": 1119,
-      "added_at": "2026-04-22T19:46:44.503194183Z",
-      "last_modified_at": "2026-04-22T19:46:44.503194183Z",
+      "added_at": "2026-04-29T20:06:45.480674467Z",
+      "last_modified_at": "2026-04-29T20:06:45.480674467Z",
       "category": "utilities",
       "tags": [
         "notification",
